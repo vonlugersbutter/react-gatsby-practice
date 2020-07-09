@@ -4,11 +4,26 @@ import Container from "../components/container"
 
 console.log(styles)
 
+const User = props => (
+    <div className={styles.user}>
+        <img src={props.character} className={styles.character} alt="" />
+        <div className={styles.description}>
+            <h2 className={styles.username}>{props.username}</h2>
+            <p className={styles.excerpt}>{props.excerpt}</p>
+        </div>
+    </div>
+)
+
 export default function About() {
     return (
         <Container>
             <h1>About CSS Modules</h1>
             <p>CSS Modules are Cool!</p>
+            <User
+                username = "Jane Doe"
+                character = "https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+                excerpt = "I'm Jane Doe!"
+            />
         </Container>
     )
 }
